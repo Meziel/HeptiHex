@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>HeptiHex - Hexagon Madness</title>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/threejs/r69/three.min.js"></script>
+		<script src="javascript/OrbitControls.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="javascript/heptihex3.js"></script>
+		
+		<style>
+		
+			html {
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+		
+			body {
+				margin: 0;
+			}
+		
+			#hh-overlay {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+			}
+			
+			.hh-center {
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translateY(-50%);
+			}
+		
+			@font-face {font-family:HeptiHex; src: url('fonts/Bump IT UP.ttf')}
+		
+			#hh-title {
+				font-size: 75px;
+				color: white;
+				font-family: HeptiHex, Impact, Charcoal, sans-serif;
+				letter-spacing: 2px;
+				padding-bottom: 50px;
+			}
+			
+			.hh-button {
+				width: 300px;
+				padding: 20px;
+				margin: 20px;
+				background-color: gray;
+				border: 6px solid lightgray;
+				color: white;
+				font-size: 40px;
+				font-family: Impact, Charcoal, sans-serif;
+			}
+			
+			#hh-title-screen {
+				visibility: hidden;
+			}
+			
+			#hh-title-message {
+				margin-top: 10px;
+				color: white;
+				font-size: 30px;
+				font-family: Impact, Charcoal, sans-serif;
+			}
+			
+			#hh-main-menu {
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	
+	<body onload="HeptiHex.start()">
+		
+		<div id="hh-overlay">
+				
+			<div id="hh-title-screen" class="hh-center">
+				<div id="hh-title">HEPTIHEX</div>
+				<button class="hh-button">START GAME</button>
+				<div id="hh-title-message">PRESS SPACE TO SELECT</div>
+			</div>
+			
+			<div id="hh-main-menu" class="hh-center">
+				<div><button id="hh-main-menu-0" class="hh-button">Singleplayer</button></div>
+				<div><button id="hh-main-menu-1" class="hh-button">Multiplayer</button></div>
+				<div><button id="hh-main-menu-2" class="hh-button">Credits</button></div>
+				<div><button id="hh-main-menu-3" class="hh-button">Options</button></div>
+				<div><button id="hh-main-menu-4" class="hh-button">Quit</button></div>
+			</div>
+			
+			<div id="hh-singleplayer" class="hh-center">
+				<div><button>Left</button><button id="hh-main-menu-0" class="hh-button">Select</button><button>Right</button></div>
+			</div>
+				
+		</div>
+	</body>
+
+</html>
